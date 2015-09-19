@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Tutorials</title>
+	<style>
+		html {height:100%;}
+		body {
+			height: 100%;
+   			margin: 0;
+   			font-family: 'Helvetica Neue', 'Helvetica', 'Liberation Sans', 'Arial', 'sans-serif';
+    		background-repeat: no-repeat;
+    		position: relative;
+    		background-attachment: fixed;
+		 	background: linear-gradient(to bottom, #f6f7fc 0%,#d5e1e8 40%);
+		 	overflow:hidden;
+		 	text-align:center;
+		}
+		#tagDiv {
+			width: 320px;
+			height: 500px;
+			position: absolute;
+			top: 50%; left: 75%;
+			margin: -250px 0 0 -160px;
+			border-radius: 5px;
+			box-shadow: 0 45px 100px rgba(0, 0, 0, 0.4);
+			overflow:hidden;
+		}
+		#heading {
+			color:black;
+			font-weight: lighter;
+			font-size: 40px; 
+			display:table;
+			margin:0 auto;
+			margin-top: 40px;
+		}
+		#tagName{
+			color:#EB6067;
+			font-size:60px;
+			display:table;
+			margin:0 auto;
+			margin-top: 120px;
+		}
+		#textDiv{
+			color:RGBA(38, 50, 56, 0.8);
+			font-size:18px;
+			text-align: center;
+			position: absolute;
+			top: 13%; left: 10%;
+			width:580px;
+			height:470px;
+			overflow: scroll;
+		}
+		#leftButton,#rightButton {
+			color:white;
+			font-weight: bolder;
+			font-size:40px;
+			position: absolute;
+			cursor: default;
+		}
+		.html{
+			font-family:'Menlo','Consolas', 'Monaco', 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', 'monospace', 'serif';
+			color:#EB6067;
+			overflow: scroll;
+		}
+		#BottomLayer{
+			color:RGBA(38, 50, 56, 0.8);
+			font-size:15px;
+			position: absolute;
+			left:40%;
+			bottom:5px;
+		}
+		#result{ color:RGBA(83, 145, 204, 0.8); }
+	</style>
+	<script type="text/javascript">
+		var a1=['Heading Tags','Paragraph Tag','Line Break Tag','Images','Anchor Tag'],
+		 	a2=['h1,h2..','p','br','img','a'],
+		 	a3=['Any document starts with a heading. You can use different sizes for your headings. HTML also has six levels of headings, which use the elements &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, and &lt;h6&gt;. While displaying any heading, browser adds one line before and one line after that heading.<br><pre><code class="html">&#x3C;h1&#x3E;This is heading 1&#x3C;/h1&#x3E;<br>&#x3C;h2&#x3E;This is heading 2&#x3C;/h2&#x3E;<br>&#x3C;h3&#x3E;This is heading 3&#x3C;/h3&#x3E;<br>&#x3C;h4&#x3E;This is heading 4&#x3C;/h4&#x3E;<br>&#x3C;h5&#x3E;This is heading 5&#x3C;/h5&#x3E;<br>&#x3C;h6&#x3E;This is heading 6&#x3C;/h6&#x3E;</code></pre><br><b>Result</b><br><span id="result"><h1>This is heading 1</h1><h2>This is heading 2</h2><h3>This is heading 3</h3><h4>This is heading 4</h4><h5>This is heading 5</h5><h6>This is heading 6</h6></span>',
+			'The &#x3C;p&#x3E; tag offers a way to structure your text into different paragraphs. Each paragraph of text should go in between an opening &#x3C;p&#x3E; and a closing &#x3C;/p&#x3E; tag as shown below in the example:<br><pre><code class="html">&#x3C;p&#x3E;Here is a first paragraph of text.&#x3C;/p&#x3E;<br>&#x3C;p&#x3E;Here is a second paragraph of text.&#x3C;/p&#x3E;<br>&#x3C;p&#x3E;Here is a third paragraph of text.&#x3C;/p&#x3E;</code></pre><br><b>Result</b><span id="result"><p>Here is a first paragraph of text.</p><p>Here is a second paragraph of text.</p><p>Here is a third paragraph of text.</p></span>',
+			'Whenever you use the &#x3C;br /&#x3E; element, anything following it starts from the next line. This tag is an example of an empty element, where you do not need opening and closing tags, as there is nothing to go in between them.<br><br>The &#x3C;br /&#x3E; tag has a space between the characters br and the forward slash. If you omit this space, older browsers will have trouble rendering the line break, while if you miss the forward slash character and just use &#x3C;br&#x3E; it is not valid in XHTML<br><pre><code class="html">Hello&#x3C;br&#x3E;You delivered your assignment ontime.</code></pre><b>Result</b><span id="result"><br><br>Hello<br>You delivered your assignment ontime.</span>',
+			'Images are very important to beautify as well as to depict many complex concepts in simple way on your web page. This tutorial will take you through simple steps to use images in your web pages.<br>You can insert any image in your web page by using &#x3C;img&#x3E; tag. Following is the simple syntax to use this tag. Example :<br><pre><code class="html">&#x3C;img src=&#x22;/html/images/test.png&#x22; alt=&#x22;Test Image&#x22; /&#x3E;</code></pre>You can use PNG, JPEG or GIF image file based on your comfort but make sure you specify correct image file name in src attribute. Image name is always case sensitive.<br>The alt attribute is a mandatory attribute which specifies an alternate text for an image, if the image cannot be displayed.<br><br><b>Result</b><br><br><img src="https://avatars3.githubusercontent.com/u/8494634?v=3&s=460" alt="Dhruv Ramai" width="120px" height="120px">',
+			'A webpage can contain various links that take you directly to other pages and even specific parts of a given page. These links are known as hyperlinks.<br>Hyperlinks allow visitors to navigate between Web sites by clicking on words, phrases, and images. Thus you can create hyperlinks using text or images available on a webpage.<br>A link is specified using HTML tag &#x3C;a&#x3E;. This tag is called anchor tag and anything between the opening &#x3C;a&#x3E; tag and the closing &#x3C;/a&#x3E; tag becomes part of the link and a user can click that part to reach to the linked document. Following is the simple syntax to use &#x3C;a&#x3E; tag.<br><pre><code class="html">&#x3C;a href=&#x22;http://www.foo.com&#x22;&#x3E;Foo&#x3C;/a&#x3E;</code></pre><br><b>Result</b><br><br><span id="result"><a href="https://stackoverflow.com/users/4534903/dhruv-ramani">Foo</a>'],
+			count=-1;
+
+			function display(op) {
+				var leftButton=document.getElementById('leftButton'),
+					rightButton=document.getElementById('rightButton');
+
+				if(count>=4 && op=='+')
+					return rightButton.style.visibility='hidden';
+				if(count<=0 && op=='-')
+					return leftButton.style.visibility='hidden';
+
+				leftButton.style.visibility='visible';
+				rightButton.style.visibility='visible';
+
+				if(op=='+')
+					count++;
+				if(op=='-')
+					count--;
+
+				document.getElementById('heading').innerHTML=a1[count];
+				document.getElementById('tagName').innerHTML=a2[count];
+				document.getElementById('textDiv').innerHTML=a3[count];
+			}
+
+	</script>
+</head>
+<body>
+	<div id="tagDiv">
+		<span id="heading">Html Tutorial</span>
+		<code id="tagName"></code>
+	</div>
+	<div id='textDiv'>
+	Welcome to HTML tutorials!<br> This website will take you through the basic HTML tags quickly. This website was desgined as a project for the Computer-Club at FAIPS-DPS. It was designed using HTML,CSS and Javascript.<br>
+	Click on the arrow button to begin.
+	</div>
+	<span id='rightButton' onclick='display("+");' style='top:50%;right:5%;'>&rarr;</span>
+	<span id='leftButton'  onclick='display("-");' style='top:50%;left:5%; visibility:hidden;'>&larr;</span>
+	<div id='BottomLayer'>Made with &#10084; for FAIPS &#8226; &#169; <b>Dhruv Ramani</b></div>
+</body>
+</html>
