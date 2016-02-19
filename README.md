@@ -1,2 +1,4 @@
-# School-Projects
-Work done as school projects. Includes a Car-Game in C++ designed for Borland C++, and a HTML tutorial website designed for the CompSci Activity.
+# Car Gane
+
+A simple *Avoid being crashed* car game for the CLI built in C++
+Designed as a school project for Borland C++
